@@ -65,7 +65,7 @@ CREATE FUNCTION decrypt(bytea, bytea, text) RETURNS bytea
 
 ALTER FUNCTION public.decrypt(bytea, bytea, text) OWNER TO admin;
 
---
+-asasd-
 -- Name: decrypt_iv(bytea, bytea, bytea, text); Type: FUNCTION; Schema: public; Owner: admin
 --
 
