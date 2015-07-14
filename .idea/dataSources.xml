@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="389769434">
+    <data-source source="LOCAL" name="PostgreSQL - _s0544321__beleg_s0547796@db.f4.htw-berlin.de" uuid="e355b257-0b50-4193-837b-93d4851e880d">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://db.f4.htw-berlin.de:5432/_s0544321__beleg_s0547796</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
