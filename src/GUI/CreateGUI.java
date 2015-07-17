@@ -14,7 +14,7 @@ import java.awt.event.InputMethodListener;
 /**
  * Created by danieljunker on 15.07.15.
  */
-public class CRU extends JFrame {
+public class CreateGUI extends JFrame {
     private JPanel formPanel;
     private JTabbedPane tpCrud;
     private JTextField tfBandName;
@@ -27,7 +27,6 @@ public class CRU extends JFrame {
     private JButton btnSaveTour;
     private JButton btnCancelTour;
     private JTextField tfSongName;
-    private JTextField tfDurationSong;
     private JComboBox cbAlbumName;
     private JTextField tfAlbumName;
     private JTextField tfReleaseDate;
@@ -44,6 +43,8 @@ public class CRU extends JFrame {
     private JComboBox cbBand;
     private JComboBox cbGenre;
     private JButton addToListButton;
+    private JFormattedTextField ftfDurMin;
+    private JFormattedTextField ftfDurSek;
 
 
     // manually declared
@@ -51,7 +52,7 @@ public class CRU extends JFrame {
     private JDBC mydb;
     private DBQueries sql;
 
-    public CRU(JDBC db) {
+    public CreateGUI(JDBC db) {
 
 
 
@@ -104,6 +105,10 @@ public class CRU extends JFrame {
 
 
             }
+        });
+        btnSaveSong.addActionListener(e -> {
+
+//           db.executeQuery(sql.InsertSong(cbBand));
         });
     }
 }

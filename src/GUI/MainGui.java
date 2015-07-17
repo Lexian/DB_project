@@ -33,7 +33,7 @@ public class MainGui extends JFrame{
 
         neueBandErstellenButton.addActionListener(e -> {
             this.dispose();
-            new CRU(db);
+            new CreateGUI(db);
 
 
         });
