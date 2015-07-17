@@ -33,6 +33,20 @@ public class DBQueries {
 
     }
 
+    // delete
 
-    // update Schmarrn und View Schmarrn
+
+    // loeschen und einlesen  Schmarrn und View Schmarrn
+
+    public String deleteDS(String tabelle, int id){
+        return "delete from " + tabelle + "where id=" + id;
+    }
+
+    public String readSong(String tabelle, int id){
+        return "select * from" + tabelle +  "where id="  + id;
+    }
+
+
+
+
 }

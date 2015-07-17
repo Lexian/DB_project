@@ -14,11 +14,11 @@ import java.awt.event.InputMethodListener;
 public class ViewDSGUI extends JFrame {
     private JTextField tfSearch;
     private JPanel mainPanel;
-    private JList listShowResult;
     private JButton btnSearch;
     private JButton btnEdit;
     private JButton btnDelete;
     private JButton btnCancel;
+    private JTable Bandname;
 
     private ActionListener allListener;
     private JDBC db;
