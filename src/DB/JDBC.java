@@ -6,6 +6,9 @@ package DB;
  */
 
 
+import org.postgresql.util.PSQLException;
+
+import javax.swing.*;
 import java.lang.reflect.Array;
 import java.sql.*;
 import java.util.ArrayList;
@@ -27,8 +30,8 @@ public class JDBC {
         isConnected = null;
         // create database connection and a statement object to sent queries
         try{
-            // jdbc:postgresql://db.f4.htw-berlin.de:5432/_s0544321__beleg_junker_yarin
-            dbcon= DriverManager.getConnection("jdbc:postgresql://"+db_url+":5432/_s0544321__beleg_junker_yarin", username, password);
+            // jdbc:postgresql://db.f4.htw-berlin.de:5432/_s0544321__beleg_junker_yarin || _s0544321__beleg_s0547796
+            dbcon= DriverManager.getConnection("jdbc:postgresql://"+db_url+":5432/_s0544321__beleg_s0547796", username, password);
             stmt= dbcon.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             isConnected = true;
         }
@@ -52,12 +55,28 @@ public class JDBC {
         try{
             return stmt.executeQuery(query);
         }
-        catch (SQLException e){
+        catch (PSQLException e){
             System.out.println("Can't execute Query!" + e.toString());
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return null;
+       return null;
+    };
+    public  ResultSet executeSaveQuery(String query){
+        try{
+            ResultSet rs = stmt.executeQuery(query);
+                JOptionPane.showMessageDialog(null,"Speichern erfolgreich");
+            return rs;
+        }
+        catch (PSQLException e){
+            System.out.println("Can't execute Query!" + e.toString());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+       return null;
     };
 
+    // für später zu implementieren (eventuell, sollte es doch benötigt werden)
     public int executeUpdate(String query){
         try{
             return stmt.executeUpdate(query);

@@ -1261,8 +1261,11 @@
       <column name="name" sqlType="varchar" precision="30" scale="0" nullable="true" jdbcType="12"/>
       <column name="release_date" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
       <column name="total_duration" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="band_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="album_pkey" columns="album_id"/>
+      <foreign-key name="band_FK" columns="band_id" ref-table="band" ref-schema="public" ref-catalog="" ref-columns="band_id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="song_album_id_fkey" table="song" schema="public" catalog="_s0544321__beleg_junker_yarin" columns="album_id"/>
+      <index name="fki_band_FK" unique="false" columns="band_id"/>
     </table>
     <table name="album_album_id_seq" schema="public" catalog="_s0544321__beleg_junker_yarin" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -1280,6 +1283,7 @@
       <column name="band_id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnYmFuZF9iYW5kX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
       <column name="name" sqlType="varchar" precision="30" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="band_pkey" columns="band_id"/>
+      <exported-key name="band_FK" table="album" schema="public" catalog="_s0544321__beleg_junker_yarin" columns="band_id"/>
       <exported-key name="song_band_id_fkey" table="song" schema="public" catalog="_s0544321__beleg_junker_yarin" columns="band_id"/>
       <exported-key name="tour_band_id_fkey" table="tour" schema="public" catalog="_s0544321__beleg_junker_yarin" columns="band_id"/>
     </table>

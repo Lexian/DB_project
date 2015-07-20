@@ -5,6 +5,8 @@ import DB.JDBC;
 import javax.swing.*;
 import javax.swing.border.AbstractBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by danieljunker on 14.07.15.
@@ -41,6 +43,16 @@ public class MainGui extends JFrame{
             this.dispose();
             new ViewDSGUI(db);
         });
+        programmBeendenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                closeProgramm();
+            }
+        });
+    }
+
+    private void closeProgramm() {
+        System.exit(0);
     }
 
 
